@@ -1,0 +1,20 @@
+{
+    "openapi": "3.0.0",
+    "paths": {
+        "/api/upload": {
+            "post": {
+                "tags": [
+                    "course"
+                ],
+                "summary": "Returns a list of courses",
+                "description": "Returns a object of courses",
+                "operationId": "App\\Http\\Controllers\\Api\\UploadController::create",
+                "responses": {
+                    "200": {
+                        "description": "A list with courses"
+                    }
+                }
+            }
+        }
+    }
+}

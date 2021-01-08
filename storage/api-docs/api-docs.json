@@ -1,0 +1,93 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "XML Processor",
+        "description": "API to process xml",
+        "contact": {
+            "email": "jonasfer1995@gmail.com"
+        },
+        "version": "1.0.0"
+    },
+    "paths": {
+        "api/person": {
+            "get": {
+                "tags": [
+                    "Person"
+                ],
+                "summary": "Returns a list of persons",
+                "operationId": "App\\Http\\Controllers\\Api\\PersonController::index",
+                "responses": {
+                    "200": {
+                        "description": "A list with persons"
+                    }
+                }
+            }
+        },
+        "api/person/{id}": {
+            "get": {
+                "tags": [
+                    "Person"
+                ],
+                "summary": "Returns person by id",
+                "operationId": "App\\Http\\Controllers\\Api\\PersonController::show",
+                "responses": {
+                    "200": {
+                        "description": "A list with persons"
+                    }
+                }
+            }
+        },
+        "api/shiporder": {
+            "get": {
+                "tags": [
+                    "Shiporder"
+                ],
+                "summary": "Returns a list of shiporders",
+                "operationId": "App\\Http\\Controllers\\Api\\ShipOrderController::index",
+                "responses": {
+                    "200": {
+                        "description": "A list with shiporders"
+                    }
+                }
+            }
+        },
+        "api/shiporder/{id}": {
+            "get": {
+                "tags": [
+                    "Shiporder"
+                ],
+                "summary": "Returns shiporder by id",
+                "operationId": "App\\Http\\Controllers\\Api\\ShipOrderController::show",
+                "responses": {
+                    "200": {
+                        "description": "Returns shiporder by id"
+                    }
+                }
+            }
+        },
+        "/api/upload": {
+            "post": {
+                "tags": [
+                    "course"
+                ],
+                "summary": "Returns a list of courses",
+                "description": "Returns a object of courses",
+                "operationId": "App\\Http\\Controllers\\Api\\UploadController::create",
+                "responses": {
+                    "200": {
+                        "description": "A list with courses"
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Endpoints",
+            "description": "API Endpoints of Project"
+        }
+    ],
+    "security": [
+        []
+    ]
+}
