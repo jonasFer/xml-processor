@@ -49,12 +49,12 @@ class ShipOrderController extends ApiController
      * )
      */
     public function show(int $id) {
-        $person = $this->service->findById($id);
+        $shiporders = $this->service->findById($id);
 
-        if (!$person) {
+        if (!$shiporders) {
             return response()->json([], JsonResponse::HTTP_NOT_FOUND);
         }
 
-        return $this->respondWithTransformer($person);
+        return $this->respondWithTransformer($shiporders);
     }
 }

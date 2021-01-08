@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 /**
@@ -32,5 +33,12 @@ class Shiporder extends Model
     public function shipto(): BelongsTo
     {
         return $this->belongsTo(Shipto::class);
+    }
+
+    /**
+     * @return HasMany
+     */
+    public function items(): HasMany {
+        return $this->hasMany(Item::class);
     }
 }

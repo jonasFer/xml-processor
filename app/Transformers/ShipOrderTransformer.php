@@ -19,14 +19,24 @@ class ShipOrderTransformer extends Transformer
     private ShipToTransformer $shipToTransformer;
 
     /**
+     * @var ItemTrasformer
+     */
+    private ItemTrasformer $itemTransformer;
+
+    /**
      * ShipOrderTransformer constructor.
      * @param PersonTrasformer $personTransformer
      * @param ShipToTransformer $shipToTransformer
+     * @param ItemTrasformer $itemTransformer
      */
-    public function __construct(PersonTrasformer $personTransformer, ShipToTransformer $shipToTransformer)
-    {
+    public function __construct(
+        PersonTrasformer $personTransformer,
+        ShipToTransformer $shipToTransformer,
+        ItemTrasformer $itemTransformer
+    ) {
         $this->personTransformer = $personTransformer;
         $this->shipToTransformer = $shipToTransformer;
+        $this->itemTransformer = $itemTransformer;
     }
 
     /**
@@ -38,7 +48,8 @@ class ShipOrderTransformer extends Transformer
         return [
             'id' => $data['id'],
             'person' => $this->personTransformer->transform($data->person),
-            'ship_to' => $this->shipToTransformer->transform($data->shipTo)
+            'ship_to' => $this->shipToTransformer->transform($data->shipTo),
+            'items' => $this->itemTransformer->transform($data->items)
         ];
     }
 }
