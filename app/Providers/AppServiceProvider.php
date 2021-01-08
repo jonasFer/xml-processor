@@ -8,6 +8,10 @@ use App\Domain\Repository\ShipOrderRepositoryInterface;
 use App\Domain\Services\BaseServiceInterface;
 use App\Domain\Services\PersonServiceInterface;
 use App\Domain\Services\ShipOrderServiceInterface;
+use App\Models\Xml\XmlPeople;
+use App\Models\Xml\XmlShiporder;
+use App\Observers\PersonObserver;
+use App\Observers\ShipOrderObserver;
 use App\Repositorys\BaseRepository;
 use App\Repositorys\PersonRepository;
 use App\Repositorys\ShipOrderRepository;
@@ -40,6 +44,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        XmlPeople::observe(PersonObserver::class);
+        XmlShiporder::observe(ShipOrderObserver::class);
     }
 }

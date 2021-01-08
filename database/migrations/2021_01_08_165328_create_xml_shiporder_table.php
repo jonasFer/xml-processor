@@ -5,9 +5,9 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 /**
- * Class CreateAddressTable
+ * Class CreateXmlShiporderTable
  */
-class CreateAddressTable extends Migration
+class CreateXmlShiporderTable extends Migration
 {
     /**
      * Run the migrations.
@@ -16,11 +16,9 @@ class CreateAddressTable extends Migration
      */
     public function up()
     {
-        Schema::create('address', function (Blueprint $table) {
+        Schema::create('xml_shiporder', function (Blueprint $table) {
             $table->id();
-            $table->string('address');
-            $table->string('city');
-            $table->string('country');
+            $table->longText('xml');
             $table->timestamps();
         });
     }
@@ -32,6 +30,6 @@ class CreateAddressTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('address');
+        Schema::dropIfExists('xml_shiporder');
     }
 }

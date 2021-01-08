@@ -10,7 +10,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::namespace('Api')
     ->name('api.')
     ->group(function() {
-        Route::post('/upload', [\App\Http\Controllers\Api\UploadController::class, 'create']);
         Route::Get('/person', [\App\Http\Controllers\Api\PersonController::class, 'index']);
         Route::Get('/person/{id}', [\App\Http\Controllers\Api\PersonController::class, 'show']);
         Route::Get('/shiporder', [\App\Http\Controllers\Api\ShipOrderController::class, 'index']);
